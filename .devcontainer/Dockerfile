@@ -39,3 +39,8 @@ CMD [ "sleep", "infinity" ]
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
+
+# Install the latest AWS CLI v2
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-$(uname -m).zip" -o "awscliv2.zip" && \
+    unzip awscliv2.zip && \
+    sudo ./aws/install
